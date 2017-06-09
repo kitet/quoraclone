@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	showF:false,
+
+	showF: false,
 	actions:{
-		saveQ(){
+		showForm(){
+			this.set('showF', true);
+		},
+		saveQuestion(question){
 			var params={
 				author: this.get('author'),
 				category: this.get('category'),
@@ -11,17 +15,13 @@ export default Ember.Component.extend({
 				note: this.get('note'),
 				tag: this.get('tag'),
 			}
-			this.sendAction('saveQuestion', params);
+			this.sendAction('editQuestion',question, params);
 			this.set('showF', false);
 			this.set('author',"");
 			this.set('category',"");
 			this.set('content',"");
 			this.set('note',"");
 			this.set('tag',"");
-		},
-		showForm(){
-			this.set('showF',true);
 		}
-
 	}
 });

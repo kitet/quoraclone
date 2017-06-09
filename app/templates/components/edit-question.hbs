@@ -1,0 +1,19 @@
+{{#if showF}}
+<h3>Edit Question</h3>
+<form class='form-group'>
+  <label for="">Author</label>
+  {{input class='form-control' placeholder=question.author id="author" value=author}}
+  <label for="">Category</label>
+  {{input class='form-control' placeholder=question.category id="category" value=category}}
+  <label for="">Content</label>
+  {{input class='form-control' placeholder=question.content id="content" value=content}}
+ <label for="">Notes</label>
+  {{input class='form-control' placeholder=question.note id="note" value=note}}
+  <label for="">Tags</label>
+  {{input class='form-control' placeholder=question.tag id="tag" value=tag}}
+  <button id='savearticle' class='btn btn-success' {{action 'saveQuestion' question}}>Update Question</button>
+</form>
+{{else}}
+<button class='btn btn-primary' {{action 'showForm'}}>Edit Question</button>
+{{/if}}
+{{yield}}

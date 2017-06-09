@@ -12,6 +12,8 @@ export default Ember.Component.extend({
 
 			this.sendAction('saveAns',params);
 			this.set('showForm', false);
+			this.set('editor',"");
+			this.set('jibu',"");
 		},
 		showNewAnswerButton(){
 			this.set('showForm', true);
