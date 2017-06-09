@@ -16,7 +16,15 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
+    firebase:{
+       apiKey: "AIzaSyC7Vcp4EZgnoSe_ehaUV5JrvWF2-A7hwPY",
+        authDomain: "quoraclone-5fe17.firebaseapp.com",
+        databaseURL: "https://quoraclone-5fe17.firebaseio.com",
+        projectId: "quoraclone-5fe17",
+        storageBucket: "quoraclone-5fe17.appspot.com",
+        messagingSenderId: "885123886726"
+    },
+    torii: { sessionServiceName: 'session' },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

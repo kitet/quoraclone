@@ -1,0 +1,23 @@
+{
+	"questions":[
+		{
+			"author":"Nick",
+			"content":"Content",
+			"note":"additional notes",
+			"tag":"programming",
+			"category":"Category"
+		}
+	],
+	"answers":[
+		{
+			"author":"Nick",
+			"content":"Content"
+		}
+	],
+	"users":[
+		{
+			"username":"Nick",
+			"password":"mypass"
+		}
+	]
+}

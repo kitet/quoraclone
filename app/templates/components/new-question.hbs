@@ -1,0 +1,14 @@
+<form class='form-group'>
+  <label for="">Author</label>
+  {{input class='form-control' id="author" value=author}}
+  <label for="">Category</label>
+  {{input class='form-control' id="category" value=category}}
+  <label for="">Content</label>
+  {{input class='form-control' id="content" value=content}}
+ <label for="">Notes</label>
+  {{input class='form-control' id="note" value=note}}
+  <label for="">Tags</label>
+  {{input class='form-control' id="tag" value=tag}}
+  <button id='savearticle' class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
+</form>
+{{yield}}

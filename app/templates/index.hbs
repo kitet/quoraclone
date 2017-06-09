@@ -1,0 +1,23 @@
+<div class='page-header'> 
+</div>  
+{{#each model as |item|}}
+	{{#link-to 'question' item.id}}
+		{{item.content}} {{item.author}}
+	{{/link-to}}
+	<br>
+{{/each}}
+<!--<div class='list-group'>  
+    {{#link-to 'sign-up' class='list-group-item'}}
+        Sign Up
+    {{/link-to}}
+   {{#if session.isWorking}}
+   	 {{#link-to 'sign-in' class='list-group-item'}}
+        Signing In...
+    {{/link-to}}
+    {{else}}
+     {{#link-to 'sign-in' class='list-group-item'}}
+        Sign In...
+    {{/link-to}}
+   {{/if}}
+</div>  -->
+{{outlet}}

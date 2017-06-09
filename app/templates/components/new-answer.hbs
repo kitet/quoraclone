@@ -1,0 +1,9 @@
+<hr>
+<form class='form-group'>
+  <label for="">author</label>
+  {{input class='form-control' id="aauthor" value=author}}
+  <label for="">answer</label>
+  {{input class='form-control' id="aanswer" value=content}}
+  <button id='savearticle' class='btn btn-success' {{action 'saveA'}}>Save Answer</button>
+</form>
+{{yield}}
