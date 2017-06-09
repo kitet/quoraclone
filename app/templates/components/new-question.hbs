@@ -1,3 +1,4 @@
+{{#if showF}}
 <form class='form-group'>
   <label for="">Author</label>
   {{input class='form-control' id="author" value=author}}
@@ -11,4 +12,7 @@
   {{input class='form-control' id="tag" value=tag}}
   <button id='savearticle' class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
 </form>
+{{else}}
+<button {{action 'showForm'}}>New Question</button>
+{{/if}}
 {{yield}}

@@ -1,9 +1,13 @@
+{{#if showForm}}
 <hr>
 <form class='form-group'>
   <label for="">author</label>
-  {{input class='form-control' id="aauthor" value=author}}
+  {{input class='form-control' id="editor" value=editor}}
   <label for="">answer</label>
-  {{input class='form-control' id="aanswer" value=content}}
+  {{input class='form-control' id="jibu" value=jibu}}
   <button id='savearticle' class='btn btn-success' {{action 'saveA'}}>Save Answer</button>
 </form>
+{{else}}
+<button {{action 'showNewAnswerButton'}}>New Answer</button>
+{{/if}} 
 {{yield}}

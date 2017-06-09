@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+	showF:false,
 	actions:{
 		saveQ(){
 			var params={
@@ -11,6 +12,11 @@ export default Ember.Component.extend({
 				tag: this.get('tag'),
 			}
 			this.sendAction('saveQuestion', params);
+			this.set('showF', false);
+		},
+		showForm(){
+			this.set('showF',true);
 		}
+
 	}
 });

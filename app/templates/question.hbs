@@ -1,5 +1,12 @@
-{{model.author}}
-
-{{new-question saveQuestion='saveQuestion'}}
-{{new-answer question=model saveAns='saveAns'}}
+{{model.question.content}}<br>
+{{model.question.author}}<br>
+{{model.question.note}}<br>
+<hr>
+<h3>Answers</h3>
+{{#each model.question.answers as |answer|}}
+	{{answer.jibu}}
+	<br>
+{{/each}}
+<hr>
+{{new-answer question=model.question saveAns='saveAns'}}
 {{outlet}}
