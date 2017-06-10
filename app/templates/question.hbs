@@ -1,11 +1,10 @@
-{{model.question.content}}<br>
-{{model.question.author}}<br>
-{{model.question.note}}<br>
-<hr>
-<h3>Answers</h3>
+<p id='question'><strong>{{model.question.content}}</strong></p>
+<p class='text-muted'><em>{{model.question.author}}</em></p>
+<p><em>Additional Notes:</em> {{model.question.note}}</p>
+<hr class='hr'>
+<h3 class='text-success'>Answers</h3>
 {{#each model.question.answers as |answer|}}
-	{{answer.jibu}}
-	<br>
+	<p class='text-warning'>{{answer.jibu}}<small><em> Answered By: {{answer.editor}}</em></small></p>
 {{/each}}
 <hr>
 {{new-answer question=model.question saveAns='saveAns'}}

@@ -6,6 +6,8 @@ export default DS.Model.extend({
 	category: DS.attr(),
 	note:DS.attr(),
 	tag:DS.attr(),
+	upvote:DS.attr(),
+	downvote: DS.attr(),
 	answers: DS.hasMany('answer',{async: true})
 	// createdAt: DS.attr('timestamp')
 });

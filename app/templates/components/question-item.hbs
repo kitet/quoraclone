@@ -1,0 +1,18 @@
+	{{#link-to 'question' item.id}}
+		<div class="row">
+		<p id='question'><strong>{{item.content}}</strong></p>
+    <p class='text-muted'><small>Asked By: {{item.author}}. Category: {{item.category}}</small></p>
+    </div>
+	{{/link-to}}
+	{{#if showUpvoteCount}}
+	<button {{action 'hideUpVoteDetails'}} class='btn'>Upvotes | {{item.upvote}}</button>
+	{{else}}
+	<button {{action 'upVote' item}} class='btn'>Upvote</button>
+	{{/if}}
+	&nbsp;&nbsp;
+	{{#if showDownVoteDetails}}
+	<button {{action 'hideUpVoteDetails'}} class='btn'>Downvotes|{{item.downvote}}</button>
+	{{else}}
+	<button {{action 'downVote' item}} class='btn'>Downvote</button>
+	{{/if}}
+	{{yield}}

@@ -1,11 +1,7 @@
 <div class='container'> 
 {{#each model as |item|}}
-	{{#link-to 'question' item.id}}
-		<div>
-		<p id='question'><strong>{{item.content}}</strong></p>
-		<p><small>Asked By: {{item.author}}</small></p>
-		</div>
-	{{/link-to}}
+	{{question-item item=item upVote='upVote' downVote='downVote'}}
+	<hr>
 {{/each}}
 </div>
 <hr>
