@@ -1,16 +1,17 @@
 <div class='container'> 
-{{#questions-filter
-	filter=(action 'filterByCategory')
-	as |filteredData|}}
-	{{#each filteredData as |item|}}
-		{{question-item item=item upVote='upVote' downVote='downVote'}}
-		<hr>
-	{{/each}}
-{{/questions-filter}}
-</div>
-<hr>
+	<div class='row'>
+		{{new-question saveQuestion='saveQuestion'}}
+	</div>
 <div class='row'>
-	{{new-question saveQuestion='saveQuestion'}}
+	{{#questions-filter
+		filter=(action 'filterByCategory')
+		as |filteredData|}}
+		{{#each filteredData as |item|}}
+			{{question-item item=item upVote='upVote' downVote='downVote'}}
+			<hr>
+		{{/each}}
+	{{/questions-filter}}
+	</div>
 </div>
 <!--<div class='list-group'>  
     {{#link-to 'sign-up' class='list-group-item'}}

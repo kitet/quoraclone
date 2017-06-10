@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
 			if(params!==''){
 				return this.store.query('question', {orderBy: 'category', equalTo: params});
 			}else{
-				return this.store.findAll('question');
+				return this.store.query('question', {limitToFirst: 20});
 			}
 		}
 	}
