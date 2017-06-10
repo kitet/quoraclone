@@ -1,11 +1,14 @@
-<div class='page-header'> 
-</div>  
+<div class='container'> 
 {{#each model as |item|}}
 	{{#link-to 'question' item.id}}
-		{{item.content}} {{item.author}}
+		<div>
+		<p id='question'><strong>{{item.content}}</strong></p>
+		<p><small>{{item.author}}</small></p>
+		<p>{{item.note}}</p>
+		</div>
 	{{/link-to}}
-	<br>
 {{/each}}
+</div>
 <hr>
 {{new-question saveQuestion='saveQuestion'}}
 <!--<div class='list-group'>  

@@ -21,6 +21,9 @@ export default Ember.Component.extend({
 		},
 		showForm(){
 			this.set('showF',true);
+		},
+		cancel(){
+			this.set('showF',false);
 		}
 
 	}

@@ -1,3 +1,16 @@
 #savearticle{
 	margin: 10px 0px;
 }
+
+#button{
+	margin: 10px 0px;
+}
+
+#main{
+	height: 100%;
+}
+
+#question{
+	color: black;
+	font-size: 25px;
+}

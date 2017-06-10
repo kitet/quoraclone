@@ -7,4 +7,5 @@ export default DS.Model.extend({
 	note:DS.attr(),
 	tag:DS.attr(),
 	answers: DS.hasMany('answer',{async: true})
+	// createdAt: DS.attr('timestamp')
 });

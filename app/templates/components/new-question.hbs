@@ -10,7 +10,8 @@
   {{input class='form-control' id="note" value=note}}
   <label for="">Tags</label>
   {{input class='form-control' id="tag" value=tag}}
-  <button id='savearticle' class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
+  <button id="button" class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
+  <button id="button" class='btn btn-secondary' {{action 'cancel'}}>Cancel</button>
 </form>
 {{else}}
 <button class='btn btn-primary' {{action 'showForm'}}>New Question</button>
