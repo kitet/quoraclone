@@ -12,6 +12,7 @@
   <label for="">Tags</label>
   {{input class='form-control' placeholder=question.tag id="tag" value=tag}}
   <button id='savearticle' class='btn btn-success' {{action 'saveQuestion' question}}>Update Question</button>
+  <button id='savearticle' class='btn' {{action 'cancelQ' question}}>Cancel</button>
 </form>
 {{else}}
 <button id='button' class='btn btn-primary' {{action 'showForm'}}>Edit Question</button>

@@ -23,5 +23,9 @@ export default Ember.Component.extend({
 			this.set('note',"");
 			this.set('tag',"");
 		}
+		,
+		cancelQ(){
+			this.set('showF', false);
+		}
 	}
 });

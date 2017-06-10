@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	showDetails: true,
-	model(){
-		return this.store.findAll('question');
-	},
+	// model(){
+	// 	return this.store.findAll('question');
+	// },
 	actions:{
 		saveQuestion(params){
 			//alert('ready to save question');

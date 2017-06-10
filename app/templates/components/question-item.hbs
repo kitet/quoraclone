@@ -1,3 +1,4 @@
+	<div class='container-fluid'>
 	{{#link-to 'question' item.id}}
 		<div class="row">
 		<p id='question'><strong>{{item.content}}</strong></p>
@@ -15,4 +16,5 @@
 	{{else}}
 	<button {{action 'downVote' item}} class='btn'>Downvote</button>
 	{{/if}}
+	</div>
 	{{yield}}

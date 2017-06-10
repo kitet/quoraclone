@@ -1,11 +1,17 @@
 <div class='container'> 
-{{#each model as |item|}}
-	{{question-item item=item upVote='upVote' downVote='downVote'}}
-	<hr>
-{{/each}}
+{{#questions-filter
+	filter=(action 'filterByCategory')
+	as |filteredData|}}
+	{{#each filteredData as |item|}}
+		{{question-item item=item upVote='upVote' downVote='downVote'}}
+		<hr>
+	{{/each}}
+{{/questions-filter}}
 </div>
 <hr>
-{{new-question saveQuestion='saveQuestion'}}
+<div class='row'>
+	{{new-question saveQuestion='saveQuestion'}}
+</div>
 <!--<div class='list-group'>  
     {{#link-to 'sign-up' class='list-group-item'}}
         Sign Up
