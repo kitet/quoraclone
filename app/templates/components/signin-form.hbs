@@ -1,0 +1,9 @@
+<form class='form-group'>
+  <label for="">email:</label>
+  {{input class='form-control' id="email" value=email}}
+  <label for="">password:</label>
+  {{input class='form-control' id="password" value=password}}
+  <button id='button' class='btn btn-success' {{action 'signIn'}}>Sign In</button>
+  <button id='button' class='btn' {{action 'cancelSignIn'}}>Cancel</button>
+</form>
+{{yield}}
