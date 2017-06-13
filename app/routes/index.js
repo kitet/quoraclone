@@ -6,14 +6,7 @@ export default Ember.Route.extend({
 	// 	return this.store.findAll('question');
 	// },
 	actions:{
-		saveQuestion(params){
-			//alert('ready to save question');
-			params.upvote=0;
-			params.downvote=0;		
-			var  newQuestion=this.store.createRecord('question',params);
-			newQuestion.save();
-		},
-
+		
 		upVote(item){	
 			var votes=parseInt(item.get('upvote'));
 			//console.log(item.get('upvote'));

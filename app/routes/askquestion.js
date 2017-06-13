@@ -23,6 +23,14 @@ export default Ember.Route.extend({
     		},
     	cancelQuestion(){
     		  this.transitionTo('index');
-    		}
+    		},
+    	saveQuestion(params){
+			//alert('ready to save question');
+			params.upvote=0;
+			params.downvote=0;		
+			var  newQuestion=this.store.createRecord('question',params);
+			newQuestion.save();
+			this.transitionTo('index');
+			}
 		}
 });
