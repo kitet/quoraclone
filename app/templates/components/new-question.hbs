@@ -1,19 +1,19 @@
-{{#if session.isAutenticated}}
+{{#if session.isAuthenticated}}
 	<form class='form-group'>
-	  <label for="">Author</label>
-	  {{input class='form-control' id="author" value=author}}
-	  <label for="">Category</label>
-	  {{input class='form-control' id="category" value=category}}
-	  <label for="">Content</label>
-	  {{textarea class='form-control' id="content" value=content}}
-	 	<label for="">Notes</label>
-	  {{input class='form-control' id="note" value=note}}
-	  <label for="">Tags</label>
-	  {{input class='form-control' id="tag" value=tag}}
-	  <button id="button" class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
-	  <button id="button" class='btn btn-secondary' {{action 'cancel'}}>Cancel</button>
+		<label for="">Author</label>
+		  {{input class='form-control' id="author" value=author}}
+		<label for="">Category</label>
+		  {{input class='form-control' id="category" value=category}}
+		<label for="">Content</label>
+		  {{textarea class='form-control' id="content" value=content}}
+		<label for="">Notes</label>
+		  {{input class='form-control' id="note" value=note}}
+		<label for="">Tags</label>
+		  {{input class='form-control' id="tag" value=tag}}
+		<button id="button" class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
+		<button id="button" class='btn btn-secondary' {{action 'cancel'}}>Cancel</button>
 	</form>
 {{else}}
-	<button id='button' class='btn btn-success' {{action 'signIn'}}>Sign In</button>
+<p class="text-warning">You need to sign in to post a new question</p>
 {{/if}}
 {{yield}}

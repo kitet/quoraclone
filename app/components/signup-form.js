@@ -9,6 +9,10 @@ export default Ember.Component.extend({
 				displayName: this.get('username')
 			}
 			this.sendAction('signUp', userobj);
+		},
+		cancelSignUp(){
+			this.sendAction('cancelSignUp');
 		}
+
 	}
 });

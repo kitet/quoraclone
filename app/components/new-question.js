@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	showF:false,
+	session: Ember.inject.service(),
 	actions:{
 		saveQ(){
 			var params={
@@ -27,7 +28,7 @@ export default Ember.Component.extend({
 			this.sendAction('askQuestion');
 		},
 		cancel(){
-			this.set('showF',false);
+			this.sendAction('cancelQuestion');
 		},
 		signIn(){
 			//redirect to sign in page

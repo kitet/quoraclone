@@ -19,7 +19,8 @@
   Logged in as {{session.currentUser.email}}
   <button class='btn btn-danger' {{action "signOut"}}>Sign out</button>
 {{else}}
-  <button class='btn btn-success' {{action "signIn"}}>Sign In</button>
+  <button id='btn' class='btn btn-success' {{action "signIn"}}>Sign In</button>
+  <button id='btn' class='btn' {{action "registerNewUser"}}>Register</button>
 {{/if}}
 </div>
    </div>
