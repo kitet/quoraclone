@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	showF:false,
-	session: Ember.inject.service(),
 	actions:{
 		saveQ(){
 			var params={
@@ -29,6 +28,10 @@ export default Ember.Component.extend({
 		},
 		cancel(){
 			this.set('showF',false);
+		},
+		signIn(){
+			//redirect to sign in page
+			this.sendAction('signIn',);
 		}
 
 	}

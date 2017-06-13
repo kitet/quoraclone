@@ -1,6 +1,6 @@
 <div class='container'> 
 	<div class='row'>
-		{{new-question askQuestion='askQuestion' saveQuestion='saveQuestion'}}
+	 	<button {{action 'askQuestion'}} id="button" class='btn btn-success'>Ask Question</button>
 	</div>
 <div class='row'>
 	{{#questions-filter

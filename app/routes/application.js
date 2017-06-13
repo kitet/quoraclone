@@ -14,7 +14,7 @@ export default Ember.Route.extend({
       	password: 'newton789'
       }).then(function(data) {
           // // console.log(data.uid);
-          // const user=store.query('user', {orderBy: 'uid',uid: data.uid});
+          //const user=store.query('user', {orderBy: 'uid',uid: data.uid});
           // // console.log(user.username);
           // console.log(user);
       })
