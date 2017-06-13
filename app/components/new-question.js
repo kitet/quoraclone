@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	showF:false,
+	session: Ember.inject.service(),
 	actions:{
 		saveQ(){
 			var params={
@@ -21,7 +22,10 @@ export default Ember.Component.extend({
 			this.set('tag',"");
 		},
 		showForm(){
-			this.set('showF',true);
+			//var checkUser=this.get('session');
+			//console.log('skgj');
+			//this.set('showF',true);
+			this.sendAction('askQuestion');
 		},
 		cancel(){
 			this.set('showF',false);

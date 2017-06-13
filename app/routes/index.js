@@ -32,6 +32,9 @@ export default Ember.Route.extend({
 			votes+=1;
 			item.set('downvote', votes);
 			item.save();
+		},
+		askQuestion(){
+			this.transitionTo('askquestion');
 		}
 	}
 });

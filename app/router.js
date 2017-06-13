@@ -11,6 +11,8 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('signup');
+  this.route('signin');
+  this.route('askquestion');
 });
 
 export default Router;
