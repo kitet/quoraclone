@@ -1,7 +1,7 @@
 {
   "name": "quoraclone",
   "version": "0.0.0",
-  "description": "Small description for quoraclone goes here",
+  "description": "A web application built on ember that works like the popular Quora website where users can posts questions that are answered by different other users",
   "license": "MIT",
   "author": "",
   "directories": {

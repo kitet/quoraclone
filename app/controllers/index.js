@@ -6,7 +6,10 @@ export default Ember.Controller.extend({
 			if(params!==''){
 				return this.store.query('question', {orderBy: 'category', equalTo: params});
 			}else{
-				return this.store.query('question', {limitToFirst: 20});
+				return this.store.query('question', {orderBy: 'timestamp'}).then(function(ourarray){
+					return ourarray.toArray().reverse();
+				});
+				//return this.store.query('question', {limitToFirst: 20});
 			}
 		}
 	}

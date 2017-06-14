@@ -1,7 +1,7 @@
 	<div class="row">
 		<div class='col-md-9'>
 			{{#link-to 'question' item.id}}
-					<p id='question'><strong>{{item.content}}</strong></p>
+					<p id='question'><strong>{{question-title item.content}}</strong></p>
 				    <p class='text-muted'><small>Asked By: {{item.author}}. Category: {{item.category}}</small></p>
 			{{/link-to}}
 				

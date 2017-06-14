@@ -1,15 +1,15 @@
 {{#if session.isAuthenticated}}
 	<form class='form-group'>
 		<label for="">Author</label>
-		  {{input class='form-control' id="author" value=author}}
+		  {{input required class='form-control' id="author" value=author}}
 		<label for="">Category</label>
-		  {{input class='form-control' id="category" value=category}}
+		  {{input required class='form-control' id="category" value=category}}
 		<label for="">Content</label>
-		  {{textarea class='form-control' id="content" value=content}}
+		  {{textarea required class='form-control' id="content" value=content}}
 		<label for="">Notes</label>
-		  {{input class='form-control' id="note" value=note}}
+		  {{input required=true class='form-control' id="note" value=note}}
 		<label for="">Tags</label>
-		  {{input class='form-control' id="tag" value=tag}}
+		  {{input required class='form-control' id="tag" value=tag}}
 		<button id="button" class='btn btn-success' {{action 'saveQ'}}>Save Question</button>
 		<button id="button" class='btn btn-secondary' {{action 'cancel'}}>Cancel</button>
 	</form>
