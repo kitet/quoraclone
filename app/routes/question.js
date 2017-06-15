@@ -6,7 +6,6 @@ handles new answer compose and saving through to the firebase
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    ownsQuestion: false,
     session: Ember.inject.service(),
     model(obj) {
         return Ember.RSVP.hash({
@@ -38,7 +37,7 @@ export default Ember.Route.extend({
                     console.log(true);
                     self.transitionTo('editquestion', question.id);
                 } else {
-                	console.log(false);
+                	alert('Trying to update question posted by someone else');
                     return false;
                 }
             });
