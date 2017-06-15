@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    session: Ember.inject.service(),
+    model(){
+        var useremail=this.get('session.currentUser.email');
+        return this.store.query('user',{orderBy:'ema',equalTo:useremail});
+    },
     actions: {
         signIn: function() {
             this.transitionTo('signin');
@@ -13,8 +16,15 @@ export default Ember.Route.extend({
             //alert('ready to save question');
             params.upvote = 0;
             params.downvote = 0;
+            var myUser=params.user;
             var newQuestion = this.store.createRecord('question', params);
-            newQuestion.save();
+            myUser.get('questions').addObject(newQuestion);
+            newQuestion.save().then(function(){
+                    return myUser.save();
+            });
+            //console.log(email);
+           
+            // newQuestion.save();
             this.transitionTo('index');
         }
     }

@@ -9,6 +9,7 @@ export default DS.Model.extend({
 	upvote:DS.attr(),
 	downvote: DS.attr(),
 	timestamp:DS.attr('number'),
+	user:DS.belongsTo('user',{async:true}),
 	answers: DS.hasMany('answer',{async: true})
 	// createdAt: DS.attr('timestamp')
 });

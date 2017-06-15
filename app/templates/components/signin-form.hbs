@@ -1,3 +1,6 @@
+{{#if session.isAuthenticated}}
+<p>Signed In</p>
+{{else}}
 <form class='form-group'>
   <label for="">email:</label>
   {{input placeholder='john@doe.com' class='form-control' id="email" value=email}}
@@ -6,4 +9,5 @@
   <button id='button' class='btn btn-success' {{action 'signIn'}}>Sign In</button>
   <button id='button' class='btn' {{action 'cancelSignIn'}}>Cancel</button>
 </form>
+{{/if}}
 {{yield}}

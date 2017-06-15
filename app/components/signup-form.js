@@ -4,7 +4,7 @@ export default Ember.Component.extend({
 	actions:{
 		signUp(){
 			var userobj={
-				email:this.get('email'),
+				ema:this.get('email'),
 				password:this.get('password'),
 				displayName: this.get('username')
 			}

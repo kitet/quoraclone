@@ -1,3 +1,6 @@
+/*
+handle sign in and update session with authenticated user details
+*/
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -9,7 +12,8 @@ export default Ember.Route.extend({
                     email: userdetails.email,
                     password: userdetails.password
                 }).then(function() {
-                    self.transitionTo('index');
+                    //console.log(userdetails.email);
+                   // self.transitionTo('index');
                 })
                 .catch(function(error) {
                     var errorCode = error.code;

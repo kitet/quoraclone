@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('signup');
   this.route('signin');
   this.route('askquestion');
+  this.route('editquestion', {path:'/editquestion/:id'});
 });
 
 export default Router;

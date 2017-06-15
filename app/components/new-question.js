@@ -11,7 +11,8 @@ export default Ember.Component.extend({
 				content: this.get('content'),
 				note: this.get('note'),
 				tag: this.get('tag'),
-				timestamp: new Date().getTime()
+				timestamp: new Date().getTime(),
+				user:this.get('user')
 			}
 			this.sendAction('saveQuestion', params);
 			this.set('showF', false);

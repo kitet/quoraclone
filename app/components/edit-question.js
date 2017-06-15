@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
 	showF: false,
+	session: Ember.inject.service(),
 	actions:{
 		showForm(){
 			this.set('showF', true);
@@ -24,8 +24,8 @@ export default Ember.Component.extend({
 			this.set('tag',"");
 		}
 		,
-		cancelQ(){
-			this.set('showF', false);
+		cancelQ(question){
+			this.sendAction('cancelQ', question);
 		}
 	}
 });

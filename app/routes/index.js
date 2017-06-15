@@ -9,7 +9,6 @@ export default Ember.Route.extend({
 	// 	return this.store.findAll('question');
 	// },
 	actions:{
-		
 		upVote(item){	
 			var votes=parseInt(item.get('upvote'));
 			//console.log(item.get('upvote'));
