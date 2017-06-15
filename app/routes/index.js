@@ -5,9 +5,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	showDetails: true,
-	// model(){
-	// 	return this.store.findAll('question');
-	// },
 	actions:{
 		upVote(item){	
 			var votes=parseInt(item.get('upvote'));
