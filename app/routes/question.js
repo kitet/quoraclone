@@ -26,10 +26,7 @@ export default Ember.Route.extend({
             this.transitionTo('question');
         },
         editQuestion(question) {
-        	var self=this;
-            // this.store.findRecord('user','-KmfVScJw-1qJM8DF3DZ').then(function(user){
-            // 	console.log(user);
-            // });
+            var self = this;
             var emailinsession = this.get('session.currentUser.email');
             var check = question.get('user').then((userobj) => {
                 var x = userobj.get('ema');
@@ -37,7 +34,7 @@ export default Ember.Route.extend({
                     console.log(true);
                     self.transitionTo('editquestion', question.id);
                 } else {
-                	alert('Trying to update question posted by someone else');
+                    alert('Trying to update question posted by someone else');
                     return false;
                 }
             });
