@@ -30,7 +30,17 @@ export default Ember.Route.extend({
 			// this.store.findRecord('user','-KmfVScJw-1qJM8DF3DZ').then(function(user){
 			// 	console.log(user);
 			// });
-			this.transitionTo('editquestion', question.id);
+			var emailinsession=this.get('session.currentUser.email');
+			var emailassoc=question.get('user').then((user)=>{
+				return user.get('ema');
+			});
+			if(emailinsession=emailassoc){
+				console.log('can edit');
+			}
+			else{
+
+			}
+			//this.transitionTo('editquestion', question.id);
 		}
 	}
 });
