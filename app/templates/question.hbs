@@ -11,22 +11,4 @@
 {{#if showEditButton}}
 <button class='btn' id='button' {{action 'editQuestion' model.question}}>Edit Question</button>
 {{/if}}
-<!--Implementing modal-->
-{{#bs-modal open=showModal onSubmit=(action "submit") onHidden=(action (mut modal3) false) as |modal|}}
-  {{#modal.header}}
-    <h4 class="modal-title">
-      Custom Dialog
-      <div class="badge">2</div>
-    </h4>
-  {{/modal.header}}
-  {{#modal.body}}
-    <input type="text" autofocus="autofocus">
-  {{/modal.body}}
-  {{#modal.footer}}
-    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
-    {{#bs-button type="danger" onClick=(action 'delete')}}Delete{{/bs-button}}
-    {{#bs-button type="success" onClick=(action 'save')}}Save{{/bs-button}}
-  {{/modal.footer}}
-{{/bs-modal}}
-{{#bs-button onClick=(action 'showModal')}}Open Modal{{/bs-button}}
 {{outlet}}

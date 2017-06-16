@@ -7,32 +7,39 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     showButton: false,
-    showEditButton:false,
+    showEditButton: false,
     session: Ember.inject.service(),
     model(obj) {
         return Ember.RSVP.hash({
             question: this.store.findRecord('question', obj.question_id),
         });
     },
-    afterModel(){
-    	var self = this;
+    afterModel(model) {
+        //console.log(model.question);
+        var self = this;
+        try {
             if (this.get('session.isAuthenticated')) {
                 var emailinsession = this.get('session.currentUser.email');
-                var question=this.get('model.question');
-                return self.get('model.question').get('user').then((userobj) => {
+                return model.question.get('user').then((userobj) => {
                     var x = userobj.get('ema');
                     if (emailinsession == x) {
-                        //console.log(true);
+                        console.log('show button');
                         //self.transitionTo('editquestion', question.id);
-                        this.set('showEditButton',  true);
+                        self.set('showEditButton', true);
+                        console.log(self.get('showEditButton'));
                     } else {
-                        alert('Trying to update question posted by someone else not allowed');
-                        return false;
+                    	console.log('dont show button');
+                        //alert('Trying to update question posted by someone else not allowed');
+                        //return false;
                     }
                 });
             } else {
-                alert('Log in to update');
-           }
+                //alert('Log in to update');
+            }
+        }
+        catch(e){
+        	console.log(e);
+        }
     },
     actions: {
         saveAns(params) {
