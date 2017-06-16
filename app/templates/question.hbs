@@ -8,6 +8,5 @@
 {{/each}}
 <hr>
 {{new-answer question=model.question saveAns='saveAns'}}
-<!--button class='btn' id='button' {{action 'editQuestion' model.question}}>Edit Question</button-->
-{{show-edit showEditButton=false}}
+<button class='btn' id='button' {{action 'editQuestion' model.question}}>Edit Question</button>
 {{outlet}}
