@@ -28,7 +28,7 @@ export default Ember.Route.extend({
                         self.set('showEditButton', true);
                         console.log(self.get('showEditButton'));
                     } else {
-                    	console.log('dont show button');
+                        console.log('dont show button');
                         //alert('Trying to update question posted by someone else not allowed');
                         //return false;
                     }
@@ -36,9 +36,8 @@ export default Ember.Route.extend({
             } else {
                 //alert('Log in to update');
             }
-        }
-        catch(e){
-        	console.log(e);
+        } catch (e) {
+            console.log(e);
         }
     },
     actions: {
