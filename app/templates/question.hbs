@@ -8,7 +8,9 @@
 {{/each}}
 <hr>
 {{new-answer question=model.question saveAns='saveAns'}}
+{{#if showEditButton}}
 <button class='btn' id='button' {{action 'editQuestion' model.question}}>Edit Question</button>
+{{/if}}
 <!--Implementing modal-->
 {{#bs-modal open=showModal onSubmit=(action "submit") onHidden=(action (mut modal3) false) as |modal|}}
   {{#modal.header}}

@@ -7,11 +7,32 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     showButton: false,
+    showEditButton:false,
     session: Ember.inject.service(),
     model(obj) {
         return Ember.RSVP.hash({
             question: this.store.findRecord('question', obj.question_id),
         });
+    },
+    afterModel(){
+    	var self = this;
+            if (this.get('session.isAuthenticated')) {
+                var emailinsession = this.get('session.currentUser.email');
+                var question=this.get('model.question');
+                return self.get('model.question').get('user').then((userobj) => {
+                    var x = userobj.get('ema');
+                    if (emailinsession == x) {
+                        //console.log(true);
+                        //self.transitionTo('editquestion', question.id);
+                        this.set('showEditButton',  true);
+                    } else {
+                        alert('Trying to update question posted by someone else not allowed');
+                        return false;
+                    }
+                });
+            } else {
+                alert('Log in to update');
+           }
     },
     actions: {
         saveAns(params) {
@@ -24,22 +45,8 @@ export default Ember.Route.extend({
             this.transitionTo('question');
         },
         editQuestion(question) {
-            var self = this;
-            if (this.get('session.isAuthenticated')) {
-                var emailinsession = this.get('session.currentUser.email');
-                return question.get('user').then((userobj) => {
-                    var x = userobj.get('ema');
-                    if (emailinsession == x) {
-                        //console.log(true);
-                        self.transitionTo('editquestion', question.id);
-                    } else {
-                        alert('Trying to update question posted by someone else not allowed');
-                        return false;
-                    }
-                });
-            } else {
-                alert('Log in to update');
-            }
+            //go edit question
+            this.transitionTo('editquestion', question.id);
         }
     }
 });
