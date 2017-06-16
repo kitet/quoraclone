@@ -27,7 +27,7 @@ export default Ember.Route.extend({
             var self = this;
             if (this.get('session.isAuthenticated')) {
                 var emailinsession = this.get('session.currentUser.email');
-                var check = question.get('user').then((userobj) => {
+                return question.get('user').then((userobj) => {
                     var x = userobj.get('ema');
                     if (emailinsession == x) {
                         //console.log(true);
@@ -38,7 +38,7 @@ export default Ember.Route.extend({
                     }
                 });
             } else {
-            	alert('Log in to update');
+                alert('Log in to update');
             }
         }
     }
