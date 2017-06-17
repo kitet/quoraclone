@@ -1,8 +1,6 @@
-{{#each model as |item|}}
 <div class='container'>
 	<div  class='row'>
 		{{new-question signIn='signIn' askQuestion='askQuestion' saveQuestion='saveQuestion' cancelQuestion='cancelQuestion' user=item}}
 	</div>
 </div>
-{{/each}}
 {{outlet}}

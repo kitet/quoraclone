@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    showF: false,
     session: Ember.inject.service(),
     actions: {
         saveQ() {
@@ -15,7 +14,6 @@ export default Ember.Component.extend({
                 user: this.get('user')
             }
             this.sendAction('saveQuestion', params);
-            this.set('showF', false);
             this.set('author', "");
             this.set('category', "");
             this.set('content', "");
@@ -23,9 +21,6 @@ export default Ember.Component.extend({
             this.set('tag', "");
         },
         showForm() {
-            //var checkUser=this.get('session');
-            //console.log('skgj');
-            //this.set('showF',true);
             this.sendAction('askQuestion');
         },
         cancel() {

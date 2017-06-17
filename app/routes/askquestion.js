@@ -1,10 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    model(){
-        var useremail=this.get('session.currentUser.email');
-        return this.store.query('user',{orderBy:'ema',equalTo:useremail});
-    },
     actions: {
         signIn: function() {
             this.transitionTo('signin');
