@@ -10,11 +10,17 @@ export default Ember.Route.extend({
         },
         saveQuestion(params) {
             //alert('ready to save question');
+            debugger;
             params.upvote = 0;
             params.downvote = 0;
             var myUser=params.user;
             var newQuestion = this.store.createRecord('question', params);
-            myUser.get('questions').addObject(newQuestion);
+            try{
+                myUser.get('questions').addObject(newQuestion);
+            }
+            catch(e){
+                console.log(e);
+            }
             newQuestion.save().then(function(){
                     return myUser.save();
             });
